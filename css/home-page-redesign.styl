@@ -1,6 +1,8 @@
-NAVY = #044774
-TEAL = #1DAAA7
-ORANGE = #FA8B22
+DARK-BLUE-GREEN = #007482
+LIGHT-BLUE-GREEN = #1FB3B0
+DARK-BLUE = #0C4881
+VERY-DARK-BLUE = #020D26
+HIGHLIGHT-LINK = #E45950
 GRAY = #EFF2F5
 
 .on-home-page-not-logged-in
@@ -45,26 +47,54 @@ GRAY = #EFF2F5
     width: 25px
     top: 4px
 
-  .standard-button
-    background: none
-    border: 4px solid #FFFFFF
+  .button
+    border: 3px solid
     border-radius: 6px
-    padding: 0.75em 1.5em
+    padding: 0.75em 1.75em
     transition: background 500ms ease
-    margin-top: 50px
+    margin: 50px 10px 0 10px
     font-size: 15px
+    text-decoration: none
 
     @media (max-width: 900px)
       margin-top: 20px
 
+  .standard-button
+    border-color: #FFFFFF
+    background: none
+
+    &:visited
+      color: #FFFFFF
+
+    &:hover,
+    &:active,
+    &:focus
+      background: #FFFFFF
+      color: DARK-BLUE-GREEN
+
+  .get-started-button
+    border-color: VERY-DARK-BLUE
+    background: LIGHT-BLUE-GREEN
+    color: #FFFFFF
+
     &:hover
-      background: rgba(0, 0, 0, 0.3)
+      background: DARK-BLUE-GREEN
+
+  .discover-button
+    border-color: DARK-BLUE
+    background: none
+    color: DARK-BLUE
+
+    &:hover
+      border-color: GRAY
+      background: LIGHT-BLUE-GREEN
+      color: #FFFFFF
 
   .home-link-down
     width: 100%
     text-align: center
     border: none
-    background-color: TEAL
+    background: rgba(0, 0, 0, 0.0)
     color: #FFFFFF
     font-size: 50px
     line-height: 50px
@@ -72,9 +102,6 @@ GRAY = #EFF2F5
   .home-intro
     color: #FFFFFF
     z-index: 0
-
-    h1
-      color: #FFFFFF
 
     video
       display: none
@@ -90,8 +117,10 @@ GRAY = #EFF2F5
         display: none
 
   .home-discover
-    color: NAVY
     background-color: GRAY
+
+    h1, p
+      color: DARK-BLUE
 
     p
       margin: 20px auto
@@ -101,21 +130,11 @@ GRAY = #EFF2F5
       @media (max-width: 900px)
         width: 100%
 
-    h1, p, .standard-button
-      color: NAVY
-
-    .standard-button
-      border: 4px solid NAVY
-
-      &:hover
-        background: rgba(0, 0, 0, 0.1)
-
   .home-promoted, .home-featured-collections
-    margin: 40px 0
     background-size: cover
     transition: background-image 500ms ease-in-out
 
-    h1, p
+    p
       color: #FFFFFF
 
     .description
@@ -158,11 +177,11 @@ GRAY = #EFF2F5
 
   .home-social
     h1
-      color: ORANGE
+      color: DARK-BLUE
       margin: 20px auto
 
     h2, h2 a
-      color: ORANGE
+      color: DARK-BLUE
       margin: 20px auto
       font-size: 1.5em
 
