@@ -36,22 +36,18 @@ module.exports = React.createClass
         </h2>
       </section>
 
-      <button className="home-link-down" onClick={@scrollDown}>
-        <i className="fa fa-angle-down" onClick={@scrollDown} />
-      </button>
-
       <section className="home-discover" ref="discover">
         <h1>Discover, teach, and learn</h1>
 
         <p>
-          The Zooniverse enables everyone to take part in real cutting edge
+          The Zooniverse enables everyone to take part in real cutting-edge
           research in many fields across the sciences, humanities, and more.
           The Zooniverse creates opportunities for you to unlock answers and
           contribute to real discoveries.
         </p>
 
         <h2>
-          <Link to="/projects" className="standard-button">Get started</Link>
+          <Link to="/projects" className="button discover-button">Choose a Project</Link>
         </h2>
       </section>
 
