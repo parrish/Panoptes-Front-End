@@ -30,10 +30,14 @@ module.exports = React.createClass
         </video>
 
         <h1>THE ZO<ZooniverseLogo />NIVERSE</h1>
-        <h2 className="lighter">is people powered research</h2>
-        <h2>
-          <Link to="/about" className="standard-button">Learn More</Link>
-        </h2>
+        <h2 className="lighter">is people powered-research</h2>
+        <div className="home-intro-buttons">
+          <button className="standard-button" onClick={@scrollDown}>Learn More</button>
+          <Link to="/projects" className="intro-button">Get Started</Link>
+        </div>
+        <button className="home-link-down" onClick={@scrollDown}>
+          <i className="fa fa-angle-down" onClick={@scrollDown} />
+        </button>
       </section>
 
       <section className="home-discover" ref="discover">
@@ -47,7 +51,7 @@ module.exports = React.createClass
         </p>
 
         <h2>
-          <Link to="/projects" className="button discover-button">Choose a Project</Link>
+          <Link to="/projects" className="discover-button">Choose a Project</Link>
         </h2>
       </section>
 

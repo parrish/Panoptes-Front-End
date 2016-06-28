@@ -1,6 +1,6 @@
+LIGHT-BLUE-GREEN = #5CBDC1 // #rgba(91, 189, 193)
 DARK-BLUE-GREEN = #007482
-LIGHT-BLUE-GREEN = #1FB3B0
-DARK-BLUE = #0C4881
+DARK-BLUE = #0C4881 // rgba(12, 72, 129)
 VERY-DARK-BLUE = #020D26
 HIGHLIGHT-LINK = #E45950
 GRAY = #EFF2F5
@@ -47,21 +47,20 @@ GRAY = #EFF2F5
     width: 25px
     top: 4px
 
-  .button
-    border: 3px solid
+  .standard-button
+    border: 2px solid
     border-radius: 6px
+    border-color: #FFFFFF
+    background: none
     padding: 0.75em 1.75em
     transition: background 500ms ease
     margin: 50px 10px 0 10px
     font-size: 15px
+    font-weight: bold
     text-decoration: none
 
     @media (max-width: 900px)
       margin-top: 20px
-
-  .standard-button
-    border-color: #FFFFFF
-    background: none
 
     &:visited
       color: #FFFFFF
@@ -72,29 +71,14 @@ GRAY = #EFF2F5
       background: #FFFFFF
       color: DARK-BLUE-GREEN
 
-  .get-started-button
-    border-color: VERY-DARK-BLUE
-    background: LIGHT-BLUE-GREEN
-    color: #FFFFFF
-
-    &:hover
-      background: DARK-BLUE-GREEN
-
-  .discover-button
-    border-color: DARK-BLUE
-    background: none
-    color: DARK-BLUE
-
-    &:hover
-      border-color: GRAY
-      background: LIGHT-BLUE-GREEN
-      color: #FFFFFF
-
   .home-link-down
+    position: absolute
+    bottom: 0
+    left: 0
     width: 100%
     text-align: center
     border: none
-    background: rgba(0, 0, 0, 0.0)
+    background: none
     color: #FFFFFF
     font-size: 50px
     line-height: 50px
@@ -116,6 +100,33 @@ GRAY = #EFF2F5
       .home-mobile-video-image
         display: none
 
+    .home-intro-buttons
+      display: flex
+      flex-flow: row wrap
+      justify-content: center
+
+    .intro-button
+      border: 0
+      border-radius: 6px
+      box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px 0
+      background: rgba(255, 255, 255, 0.9)
+      padding: 0.75em 1.75em
+      transition: background 500ms ease
+      margin: 50px 10px 0 10px
+      font-size: 15px
+      font-weight: bold
+      text-decoration: none
+      color: DARK-BLUE-GREEN
+
+      @media (max-width: 900px)
+        margin-top: 20px
+
+      &:hover
+      &:active,
+      &:focus
+        background: LIGHT-BLUE-GREEN
+        color: #FFFFFF
+
   .home-discover
     background-color: GRAY
 
@@ -129,6 +140,28 @@ GRAY = #EFF2F5
 
       @media (max-width: 900px)
         width: 100%
+
+    .discover-button
+      border: 2px solid
+      border-radius: 6px
+      border-color: DARK-BLUE
+      background: none
+      padding: 0.75em 1.75em
+      transition: background 500ms ease
+      margin: 50px 10px 0 10px
+      font-size: 15px
+      font-weight: bold
+      text-decoration: none
+      color: DARK-BLUE
+
+      @media (max-width: 900px)
+        margin-top: 20px
+
+      &:hover,
+      &:active,
+      &:focus
+        background: DARK-BLUE
+        color: #FFFFFF
 
   .home-promoted, .home-featured-collections
     background-size: cover
