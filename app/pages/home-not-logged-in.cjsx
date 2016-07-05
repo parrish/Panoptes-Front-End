@@ -30,7 +30,7 @@ module.exports = React.createClass
         </video>
 
         <h1>THE ZO<ZooniverseLogo />NIVERSE</h1>
-        <h2 className="lighter">is people powered-research</h2>
+        <h2 className="lighter">is people powered research</h2>
         <div className="home-intro-buttons">
           <button className="standard-button" onClick={@scrollDown}>Learn More</button>
           <Link to="/projects" className="intro-button">Get Started</Link>
@@ -44,7 +44,7 @@ module.exports = React.createClass
         <h1>Discover, teach, and learn</h1>
 
         <p>
-          The Zooniverse enables everyone to take part in real cutting-edge
+          The Zooniverse enables everyone to take part in real cutting edge
           research in many fields across the sciences, humanities, and more.
           The Zooniverse creates opportunities for you to unlock answers and
           contribute to real discoveries.
