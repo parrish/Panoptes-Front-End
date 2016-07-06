@@ -83,8 +83,10 @@ GRAY = #EFF2F5
     font-size: 50px
     line-height: 50px
 
+    @media (max-width: 900px)
+      display: none
+
   .home-intro
-    color: #FFFFFF
     z-index: 0
 
     video
@@ -99,6 +101,16 @@ GRAY = #EFF2F5
 
       .home-mobile-video-image
         display: none
+
+    video, .home-mobile-video-image
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 100%
+
+      @media (max-width: 900px)
+        width: auto
 
     .home-intro-buttons
       display: flex
