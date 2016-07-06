@@ -1,6 +1,8 @@
-NAVY = #044774
-TEAL = #1DAAA7
-ORANGE = #FA8B22
+LIGHT-BLUE-GREEN = #5CBDC1
+DARK-BLUE-GREEN = #007482
+DARK-BLUE = #0C4881
+VERY-DARK-BLUE = #020D26
+HIGHLIGHT-LINK = #E45950
 GRAY = #EFF2F5
 
 .on-home-page-not-logged-in
@@ -46,35 +48,46 @@ GRAY = #EFF2F5
     top: 4px
 
   .standard-button
-    background: none
-    border: 4px solid #FFFFFF
+    border: 2px solid
     border-radius: 6px
-    padding: 0.75em 1.5em
+    border-color: #FFFFFF
+    background: none
+    padding: 0.75em 1.75em
     transition: background 500ms ease
-    margin-top: 50px
+    margin: 50px 10px 0 10px
     font-size: 15px
+    font-weight: bold
+    text-decoration: none
 
     @media (max-width: 900px)
       margin-top: 20px
 
-    &:hover
-      background: rgba(0, 0, 0, 0.3)
+    &:visited
+      color: #FFFFFF
+
+    &:hover,
+    &:active,
+    &:focus
+      background: #FFFFFF
+      color: DARK-BLUE-GREEN
 
   .home-link-down
+    position: absolute
+    bottom: 0
+    left: 0
     width: 100%
     text-align: center
     border: none
-    background-color: TEAL
+    background: none
     color: #FFFFFF
     font-size: 50px
     line-height: 50px
 
-  .home-intro
-    color: #FFFFFF
-    z-index: 0
+    @media (max-width: 900px)
+      display: none
 
-    h1
-      color: #FFFFFF
+  .home-intro
+    z-index: 0
 
     video
       display: none
@@ -96,12 +109,41 @@ GRAY = #EFF2F5
       z-index: -1
       width: 100%
 
-    @media (max-width: 700px)
-      padding-top: 8vw
+      @media (max-width: 900px)
+        width: auto
+
+    .home-intro-buttons
+      display: flex
+      flex-flow: row wrap
+      justify-content: center
+
+    .intro-button
+      border: 0
+      border-radius: 6px
+      box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px 0
+      background: rgba(255, 255, 255, 0.9)
+      padding: 0.75em 1.75em
+      transition: background 500ms ease
+      margin: 50px 10px 0 10px
+      font-size: 15px
+      font-weight: bold
+      text-decoration: none
+      color: DARK-BLUE-GREEN
+
+      @media (max-width: 900px)
+        margin-top: 20px
+
+      &:hover,
+      &:active,
+      &:focus
+        background: LIGHT-BLUE-GREEN
+        color: #FFFFFF
 
   .home-discover
-    color: NAVY
     background-color: GRAY
+
+    h1, p
+      color: DARK-BLUE
 
     p
       margin: 20px auto
@@ -111,21 +153,33 @@ GRAY = #EFF2F5
       @media (max-width: 900px)
         width: 100%
 
-    h1, p, .standard-button
-      color: NAVY
+    .discover-button
+      border: 2px solid
+      border-radius: 6px
+      border-color: DARK-BLUE
+      background: none
+      padding: 0.75em 1.75em
+      transition: background 500ms ease
+      margin: 50px 10px 0 10px
+      font-size: 15px
+      font-weight: bold
+      text-decoration: none
+      color: DARK-BLUE
 
-    .standard-button
-      border: 4px solid NAVY
+      @media (max-width: 900px)
+        margin-top: 20px
 
-      &:hover
-        background: rgba(0, 0, 0, 0.1)
+      &:hover,
+      &:active,
+      &:focus
+        background: DARK-BLUE
+        color: #FFFFFF
 
   .home-promoted, .home-featured-collections
-    margin: 40px 0
     background-size: cover
     transition: background-image 500ms ease-in-out
 
-    h1, p
+    p
       color: #FFFFFF
 
     .description
@@ -168,11 +222,11 @@ GRAY = #EFF2F5
 
   .home-social
     h1
-      color: ORANGE
+      color: DARK-BLUE
       margin: 20px auto
 
     h2, h2 a
-      color: ORANGE
+      color: DARK-BLUE
       margin: 20px auto
       font-size: 1.5em
 

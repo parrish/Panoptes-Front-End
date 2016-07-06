@@ -31,14 +31,14 @@ module.exports = React.createClass
 
         <h1>THE ZO<ZooniverseLogo />NIVERSE</h1>
         <h2 className="lighter">is people powered research</h2>
-        <h2>
-          <Link to="/about" className="standard-button">Learn More</Link>
-        </h2>
+        <div className="home-intro-buttons">
+          <button className="standard-button" onClick={@scrollDown}>Learn More</button>
+          <Link to="/projects" className="intro-button">Get Started</Link>
+        </div>
+        <button className="home-link-down" onClick={@scrollDown}>
+          <i className="fa fa-angle-down" onClick={@scrollDown} />
+        </button>
       </section>
-
-      <button className="home-link-down" onClick={@scrollDown}>
-        <i className="fa fa-angle-down" onClick={@scrollDown} />
-      </button>
 
       <section className="home-discover" ref="discover">
         <h1>Discover, teach, and learn</h1>
@@ -51,7 +51,7 @@ module.exports = React.createClass
         </p>
 
         <h2>
-          <Link to="/projects" className="standard-button">Get started</Link>
+          <Link to="/projects" className="discover-button">Choose a Project</Link>
         </h2>
       </section>
 

@@ -70,7 +70,7 @@ module.exports = React.createClass
       <div><p ref="description" className="description">{project.description}</p></div>
 
       <h2>
-        <Link to={"/projects/#{project.slug}"} className="standard-button">Join our team</Link>
+        <Link to={"/projects/#{project.slug}"} className="standard-button">Join Our Team</Link>
       </h2>
 
       <div className="controls">
