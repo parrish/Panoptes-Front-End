@@ -4,7 +4,7 @@ ReactDOM = require 'react-dom'
 ZooniverseLogo = require '../partials/zooniverse-logo'
 HomePageSocial = require './home-not-logged-in/social'
 HomePagePromoted = require './home-not-logged-in/promoted'
-HomePageFeaturedCollections = require './home-not-logged-in/featured-collections'
+# HomePageFeaturedCollections = require './home-not-logged-in/featured-collections'
 
 module.exports = React.createClass
   displayName: 'HomePage'
@@ -56,8 +56,6 @@ module.exports = React.createClass
       </section>
 
       <HomePagePromoted />
-
-      <HomePageFeaturedCollections />
 
       <HomePageSocial />
     </div>

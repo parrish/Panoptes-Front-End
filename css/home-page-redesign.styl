@@ -123,18 +123,20 @@ GRAY = #EFF2F5
         background: rgba(0, 0, 0, 0.1)
 
   .home-promoted, .home-featured-collections
-    margin: 40px 0
     background-size: cover
+    background-position: center
     transition: background-image 500ms ease-in-out
 
-    h1, p
+    p
       color: #FFFFFF
 
     .description
-      position: relative
       opacity: 1
-      top: 0
-      font-size: 2em
+      position: relative
+      top: 10px
+      margin-top: 10px
+      margin-bottom: 10px
+      font-size: 3em
 
       &:not(.appearing)
         transition: all 1s
@@ -148,25 +150,47 @@ GRAY = #EFF2F5
         opacity: 1
 
     .controls
-      opacity: 0
-      display: flex
-      justify-content: space-around
-      align-items: center
-      width: 300px
-      margin-top 50px
-      color: #FFFFFF
-      font-size: 2em
+      // change back to opacity: 0 when done styling
+      opacity: 1
       transition: opacity 500ms ease-in-out
-
-      .fa-angle-left, .fa-angle-right
-        font-size: 1.5em
+      color: #FFFFFF
 
       i
         cursor: pointer
 
+      &.arrows
+        position: absolute
+        font-size: 4em
+        border: 3px solid #FFFFFF
+        border-radius: 50%
+        text-align: center
+        width: 25px
+        height: 25px
+        line-height: 25px
+        vertical-align: middle
+        padding: 10px
+
+        &.fa-angle-left
+          left: 50px
+
+        &.fa-angle-right
+          right: 50px
+
+      &.circles
+        position: absolute
+        bottom: 100px
+        left: 0
+        width: 100%
+        text-align: center
+
+        .fa-circle, .fa-circle-o
+          margin: 0 5px 0 5px
+
     .owner
-      margin-left: 2vw
-      margin-right: auto
+      position: absolute
+      bottom: 100px
+      left: 2vw
+      margin: 0
 
   .home-social
     h1

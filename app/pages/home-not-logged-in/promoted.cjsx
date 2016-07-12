@@ -2,7 +2,8 @@ React = require 'react'
 ReactDOM = require 'react-dom'
 {Link} = require 'react-router'
 apiClient = require 'panoptes-client/lib/api-client'
-FEATURED_PROJECT_IDS = require '../../lib/featured-projects'
+ZooniverseLogo = require '../../partials/zooniverse-logo'
+FEATURED_PROJECTS = require '../../lib/featured-projects'
 
 hovered = false
 
@@ -33,14 +34,16 @@ module.exports = React.createClass
     @setState timer: null
 
   loadProjects: ->
-    apiClient.type('projects').get(id: FEATURED_PROJECT_IDS, cards: true, include: 'background,avatar').then (projects) =>
+    apiClient.type('projects').get(id: Object.keys(FEATURED_PROJECTS), cards: true, include: 'background,avatar').then (projects) =>
       Promise.all(projects.map (project) =>
         project.get 'background'
           .then ([background]) =>
             project.image = background.src
+            project.caption = FEATURED_PROJECTS[project.id]
             project
           .catch =>
             project.image = project.avatar_src
+            project.caption = "needs your help"
             project
       )
 
@@ -65,21 +68,24 @@ module.exports = React.createClass
     , 100
 
     <section className="home-promoted" style={backgroundImage: "url(#{background})"} onMouseEnter={@hovered} onMouseLeave={@unhovered}>
-      <h1>{project.display_name}</h1>
+      <h1>THE ZO<ZooniverseLogo />NIVERSE</h1>
 
-      <div><p ref="description" className="description">{project.description}</p></div>
+      <p ref="description" className="description">{project.caption}</p>
+
+      <i className="controls arrows fa fa-angle-left" onClick={@setIndex(@state.index - 1)} />
+      <i className="controls arrows fa fa-angle-right" onClick={@setIndex(@state.index + 1)} />
 
       <h2>
-        <Link to={"/projects/#{project.slug}"} className="standard-button">Join our team</Link>
+      <Link to={"/projects/#{project.slug}"} className="standard-button">Join Our Team</Link>
       </h2>
 
-      <div className="controls">
-        <i className="fa fa-angle-left" onClick={@setIndex(@state.index - 1)} />
-        {for promotedProject, i in @state.projects
-          if promotedProject.id is project.id
-            <i key={"promoted-project-#{promotedProject.id}"} className="fa fa-circle" />
-          else
-            <i key={"promoted-project-#{promotedProject.id}"} className="fa fa-circle-o" onClick={@setIndex(i)} />}
-        <i className="fa fa-angle-right" onClick={@setIndex(@state.index + 1)} />
+      <div className="controls circles">
+      {for promotedProject, i in @state.projects
+        if promotedProject.id is project.id
+          <i key={"promoted-project-#{promotedProject.id}"} className="fa fa-circle" />
+        else
+          <i key={"promoted-project-#{promotedProject.id}"} className="fa fa-circle-o" onClick={@setIndex(i)} />}
       </div>
+
+      <p className="owner">Image from <strong>{project.display_name} Project</strong></p>
     </section>
