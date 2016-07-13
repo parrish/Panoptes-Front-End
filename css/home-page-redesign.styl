@@ -2,7 +2,7 @@ LIGHT-BLUE-GREEN = #5CBDC1
 DARK-BLUE-GREEN = #007482
 DARK-BLUE = #0C4881
 VERY-DARK-BLUE = #020D26
-HIGHLIGHT-LINK = #E45950
+ORANGE-HIGHLIGHT = #E45950
 GRAY = #EFF2F5
 
 .on-home-page-not-logged-in
@@ -27,7 +27,7 @@ GRAY = #EFF2F5
     font-size: 30px
 
     @media (max-width: 900px)
-      font-size: 25px
+      font-size: 20px
 
     &.lighter
       font-weight: 400
@@ -41,6 +41,10 @@ GRAY = #EFF2F5
     justify-content: center
     text-align: center
     min-height: 50vw // video is 2:1 aspect ratio and 100% width
+
+    @media (max-width: 900px)
+      padding-top: 2em
+      padding-bottom: 2em
 
   .zooniverse-logo
     position: relative
@@ -87,6 +91,7 @@ GRAY = #EFF2F5
       display: none
 
   .home-intro
+    background-color: GRAY
     z-index: 0
 
     video
@@ -110,7 +115,7 @@ GRAY = #EFF2F5
       width: 100%
 
       @media (max-width: 900px)
-        width: auto
+        height: 100%
 
     .home-intro-buttons
       display: flex
@@ -152,6 +157,7 @@ GRAY = #EFF2F5
 
       @media (max-width: 900px)
         width: 100%
+        font-size: 1.5em
 
     .discover-button
       border: 2px solid
@@ -175,13 +181,16 @@ GRAY = #EFF2F5
         background: DARK-BLUE
         color: #FFFFFF
 
-  .home-promoted, .home-featured-collections
+  .home-promoted
     background-size: cover
     background-position: center
     transition: background-image 500ms ease-in-out
+    padding: 0
 
-    p
-      color: #FFFFFF
+    .filter
+      @extends .home-page-not-logged-in section
+      width: 100%
+      background: linear-gradient(top, rgba(DARK-BLUE-GREEN, 0.4), rgba(0, 0, 0, 0))
 
     .description
       opacity: 1
@@ -190,6 +199,7 @@ GRAY = #EFF2F5
       margin-top: 10px
       margin-bottom: 10px
       font-size: 3em
+      color: #FFFFFF
 
       &:not(.appearing)
         transition: all 1s
@@ -197,6 +207,9 @@ GRAY = #EFF2F5
       &.appearing
         top: 50px
         opacity: 0
+
+      @media (max-width: 900px)
+        font-size: 2em
 
     &:hover
       .controls
@@ -207,10 +220,7 @@ GRAY = #EFF2F5
       transition: opacity 500ms ease-in-out
       color: #FFFFFF
 
-      i
-        cursor: pointer
-
-      &.arrows
+      &.angles
         position: absolute
         font-size: 4em
         border: 3px solid #FFFFFF
@@ -221,6 +231,7 @@ GRAY = #EFF2F5
         line-height: 25px
         vertical-align: middle
         padding: 10px
+        cursor: pointer
 
         &.fa-angle-left
           left: 50px
@@ -237,26 +248,36 @@ GRAY = #EFF2F5
 
         .fa-circle, .fa-circle-o
           margin: 0 5px 0 5px
+          cursor: pointer
+
+      @media (max-width: 900px)
+        display: none
 
     .owner
       position: absolute
       bottom: 100px
       left: 2vw
       margin: 0
+      color: #FFFFFF
+
+      @media (max-width: 900px)
+        display: none
 
   .home-social
+    background-color: GRAY
+    padding 50px 0
+
+    @media (max-width: 900px)
+      padding 2em
+
     h1
       color: DARK-BLUE
-<<<<<<< a8468fcfdc60e86d138eb70d36a0221ef75b6e8d
-      margin: 30px auto
-=======
       margin: 20px auto
->>>>>>> init colors, buttons and minor content updates
 
     h2, h2 a
       color: DARK-BLUE
       margin: 20px auto
-      font-size: 1.5em
+      font-size: 20px
       text-decoration: none
 
     .home-social-columns
@@ -298,5 +319,5 @@ GRAY = #EFF2F5
         .home-social-read-more
           font-style: italic
           font-weight: bolder
-          color: ORANGE
+          color: ORANGE-HIGHLIGHT
           text-decoration: none

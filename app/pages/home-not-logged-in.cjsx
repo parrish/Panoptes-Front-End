@@ -17,7 +17,7 @@ module.exports = React.createClass
 
   scrollDown: (e) ->
     e.preventDefault()
-    ReactDOM.findDOMNode(@refs.discover)?.scrollIntoView behavior: 'smooth', block: 'start'
+    @refs.discover?.scrollIntoView behavior: 'smooth', block: 'start'
 
   render: ->
     <div className="home-page-not-logged-in">
@@ -50,9 +50,7 @@ module.exports = React.createClass
           contribute to real discoveries.
         </p>
 
-        <h2>
-          <Link to="/projects" className="discover-button">Choose a Project</Link>
-        </h2>
+        <Link to="/projects" className="discover-button">Choose a Project</Link>
       </section>
 
       <HomePagePromoted />
